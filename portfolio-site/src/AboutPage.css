@@ -1,0 +1,635 @@
+﻿/* ============================================
+   BASE PAGE STYLES
+   ============================================ */
+
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #1C1D20;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   CONTAINER SYSTEM (Dennis-style)
+   ============================================ */
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.container.large {
+  max-width: 1545px;
+  padding-left: clamp(12px, 5vw, 90px);
+  padding-right: clamp(12px, 5vw, 90px);
+}
+
+.container.medium {
+  max-width: 1545px;
+  padding-left: clamp(12px, 5vw, 90px);
+  padding-right: clamp(12px, 5vw, 90px);
+}
+
+.container.once-in {
+  /* Animation class placeholder */
+}
+
+/* ============================================
+   NAVIGATION BAR (Dennis-style)
+   ============================================ */
+
+.about-page .navigation {
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+
+.about-page .nav-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 90px 23.175px 90px;
+}
+
+.about-page .navigation .container {
+  /* Remove container styles from navigation */
+}
+
+.about-page .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 28px;
+  color: #1C1D20 !important;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.about-page .brand-text-container {
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  width: 100px;
+  transition: width 0.4s ease;
+}
+
+.about-page .brand:hover .brand-text-container {
+  width: 280px;
+}
+
+.about-page .brand-text {
+  display: block;
+  white-space: nowrap;
+  transition: transform 0.4s ease;
+}
+
+.about-page .brand-text-default {
+  transform: translateX(0);
+}
+
+.about-page .brand-text-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+}
+
+.about-page .brand:hover .brand-text-default {
+  transform: translateX(-100%);
+}
+
+.about-page .brand:hover .brand-text-hover {
+  transform: translateX(0);
+}
+
+.about-page .nav-links {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-page .nav-link {
+  color: #1C1D20 !important;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 25px;
+  position: relative;
+  padding-bottom: 4px;
+  transition: transform 0.2s ease;
+}
+
+.about-page .nav-link.active {
+  font-weight: 600;
+}
+
+.about-page .nav-link.active::before {
+  content: '•';
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4a6cf7;
+  font-size: 20px;
+}
+
+.about-page .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: #1C1D20;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.about-page .nav-link.active::after {
+  transform: scaleX(1);
+  background: #4a6cf7;
+}
+
+.about-page .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ============================================
+   SECTION SYSTEM
+   ============================================ */
+
+.section {
+  width: 100%;
+  position: relative;
+}
+
+.section.default-header {
+  padding-top: clamp(80px, 15vh, 160px);
+  padding-bottom: 60px;
+}
+
+.section.about-header {
+  /* Additional about header styles */
+}
+
+.section.about-image {
+  padding-top: 0;
+  padding-bottom: 100px;
+}
+
+/* ============================================
+   HERO / HEADER CONTENT
+   ============================================ */
+
+.display-heading {
+  font-size: clamp(84px, 12vw, 134px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 0 32px 0;
+  color: #1C1D20;
+}
+
+.overlay {
+  position: relative;
+  width: 100%;
+}
+
+.overlay-image {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.overlay-image.is-inview {
+  /* Animation state placeholder */
+}
+
+.overlay-line {
+  flex: 1;
+  height: 1px;
+  background: #d1d5db;
+}
+
+.about-page .cta-button {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: none;
+  background: #4a6cf7;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s cubic-bezier(0.25, 1.1, 0.35, 1), box-shadow 0.4s ease;
+  display: grid;
+  place-items: center;
+  position: relative;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.about-page .cta-button:hover {
+  transform: translateY(-6px) scale(1.05) !important;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35);
+}
+
+.about-page .cta-text {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.25, 0.9, 0.4, 1.2);
+  color: #fff;
+}
+
+/* ============================================
+   ABOUT CONTENT SECTION
+   ============================================ */
+
+.section.about-image .container.large {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.about-page .flex-col {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  color: #1C1D20;
+}
+
+.about-page .arrow-indicator {
+  font-size: 32px;
+  line-height: 1;
+  padding-top: 8px;
+  color: #1C1D20;
+  flex-shrink: 0;
+  margin-left: -60px;
+}
+
+.about-page .content-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-page .content-block p {
+  margin: 0;
+  max-width: 520px;
+  line-height: 1.6;
+  font-size: 22px;
+  color: #1C1D20;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.text-muted {
+  color: #9ca3af;
+}
+
+.about-page .image-container {
+  width: 100%;
+  position: relative;
+}
+
+.about-page .about-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+  display: block;
+}
+
+.about-page .image-placeholder {
+  width: 100%;
+  min-height: 420px;
+  background: #f4f6fb;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+@media (max-width: 1200px) {
+  .container.large,
+  .container.medium {
+    padding-left: clamp(32px, 5vw, 80px);
+    padding-right: clamp(32px, 5vw, 80px);
+  }
+}
+
+@media (max-width: 960px) {
+  .section.about-image .container.large {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .cta-button {
+    width: 140px;
+    height: 140px;
+    font-size: 14px;
+  }
+  
+  .nav-links {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-bar {
+    padding: 40px 24px;
+  }
+  
+  .nav-links {
+    gap: 24px;
+  }
+  
+  .nav-link {
+    font-size: 20px;
+  }
+  
+  .display-heading {
+    font-size: clamp(42px, 11vw, 72px);
+  }
+  
+  .cta-button {
+    width: 130px;
+    height: 130px;
+    font-size: 13px;
+  }
+  
+  .flex-col {
+    gap: 16px;
+  }
+  
+  .arrow-indicator {
+    font-size: 24px;
+  }
+  
+  .content-block p {
+    font-size: 16px;
+  }
+  
+  .container.large,
+  .container.medium {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* ============================================
+   FAB MENU (Copied from PortfolioHero)
+   ============================================ */
+
+.about-page .fab-wrapper {
+  position: fixed;
+  right: 90px;
+  top: 60px;
+  z-index: 1000;
+}
+
+.about-page .menu-fab {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease-out, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-page .menu-fab:hover {
+  background: #2a2a2a;
+}
+
+.about-page .menu-fab::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #4a6cf7;
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+  z-index: 0;
+}
+
+.about-page .menu-fab:hover::after {
+  transform: translateY(0);
+}
+
+.about-page .menu-fab .fab-lines {
+  position: relative;
+  z-index: 1;
+}
+
+.about-page .fab-lines {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.about-page .fab-lines span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.about-page .menu-fab.open .fab-lines span:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.about-page .menu-fab.open .fab-lines span:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+.about-page .fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.about-page .fullscreen-menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.about-page .fullscreen-menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.about-page .fullscreen-menu.open .fullscreen-menu-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-page .menu-brand-wrapper {
+  padding: 30px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.about-page .menu-brand {
+  color: white;
+  font-size: 48px;
+  font-weight: 300;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: transform 0.15s ease-out;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.about-page .menu-brand-symbol {
+  display: none;
+}
+
+.about-page .menu-brand-text-container {
+  position: relative;
+  overflow: hidden;
+  height: 58px;
+  width: 80px;
+  transition: width 0.4s ease;
+}
+
+.about-page .menu-brand-wrapper:hover .menu-brand-text-container {
+  width: 420px;
+}
+
+.about-page .menu-brand-text {
+  display: block;
+  white-space: nowrap;
+  transition: transform 0.4s ease;
+}
+
+.about-page .menu-brand-text-default {
+  transform: translateX(0);
+}
+
+.about-page .menu-brand-text-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+}
+
+.about-page .menu-brand-wrapper:hover .menu-brand-text-default {
+  transform: translateX(-100%);
+}
+
+.about-page .menu-brand-wrapper:hover .menu-brand-text-hover {
+  transform: translateX(0);
+}
+
+.about-page .fullscreen-menu-content a {
+  color: white !important;
+  font-size: 48px;
+  font-weight: 300;
+  font-family: 'Space Grotesk', sans-serif;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.4s ease, transform 0.15s ease-out, color 0.3s ease;
+  padding: 10px 30px;
+}
+
+.about-page .fullscreen-menu.open .fullscreen-menu-content a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-page .fullscreen-menu-content .menu-brand-wrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.about-page .fullscreen-menu.open .fullscreen-menu-content .menu-brand-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.05s;
+}
+
+.about-page .fullscreen-menu.open .fullscreen-menu-content a:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.about-page .fullscreen-menu.open .fullscreen-menu-content a:nth-child(3) {
+  transition-delay: 0.15s;
+}
+
+.about-page .fullscreen-menu.open .fullscreen-menu-content a:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+.about-page .fullscreen-menu-link {
+  color: white !important;
+  font-size: 48px;
+  font-weight: 300;
+  font-family: 'Space Grotesk', sans-serif;
+  text-decoration: none;
+  padding: 20px 40px;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.15s ease-out, color 0.3s ease;
+  will-change: transform;
+}
+
+.about-page .fullscreen-menu-link:hover {
+  color: #888 !important;
+}
+
+.about-page .fullscreen-menu.open .fullscreen-menu-link {
+  opacity: 1;
+  transform: translateY(0);
+}

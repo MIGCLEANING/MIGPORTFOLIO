@@ -1,0 +1,235 @@
+.contact-footer {
+  background: #0f1115;
+  color: #e7ebf3;
+  padding: 140px 72px 120px;
+  margin-top: 160px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.contact-footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.contact-footer__avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-footer__title {
+  margin: 0;
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.contact-footer__heading {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.contact-footer__arrow {
+  font-size: 50px;
+  color: rgba(231, 235, 243, 0.95);
+  position: absolute;
+  left: 60%;
+  bottom: -70px;
+  transform: translateX(-50%);
+}
+
+.contact-footer__divider {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-footer__divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-footer__cta-wrap {
+  position: absolute;
+  left: 70%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contact-footer__cta {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: none;
+  background: #4a6cf7;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s cubic-bezier(0.25, 1.1, 0.35, 1), box-shadow 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-footer__cta-text {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.25, 0.9, 0.4, 1.2);
+}
+
+.contact-footer__cta:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35);
+}
+
+.contact-footer__actions {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.contact-footer__pill {
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(231, 235, 243, 0.18);
+  color: #e7ebf3;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.contact-footer__pill:hover {
+  background: rgba(74, 108, 247, 0.12);
+  border-color: rgba(74, 108, 247, 0.5);
+}
+
+.contact-footer__meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  align-items: start;
+  color: rgba(231, 235, 243, 0.75);
+}
+
+.meta-label {
+  margin: 0 0 6px 0;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(231, 235, 243, 0.5);
+}
+
+.meta-value {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e7ebf3;
+}
+
+.meta-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.meta-links a {
+  color: #e7ebf3;
+  opacity: 1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.meta-links a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 960px) {
+  .contact-footer {
+    padding: 110px 32px 90px;
+  }
+
+  .contact-footer__heading {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "avatar title"
+      "arrow arrow";
+  }
+
+  .contact-footer__arrow {
+    grid-area: arrow;
+    justify-self: flex-end;
+  }
+
+  .contact-footer__divider {
+    justify-content: center;
+  }
+
+  .contact-footer__cta {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-footer {
+    padding: 80px 24px 80px;
+  }
+
+  .contact-footer__inner {
+    gap: 36px;
+  }
+
+  .contact-footer__heading {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "avatar"
+      "title"
+      "arrow";
+    justify-items: start;
+  }
+
+  .contact-footer__avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 14px;
+    background-color: #ffffff;
+  }
+
+  .contact-footer__title {
+    font-size: clamp(36px, 9vw, 48px);
+  }
+
+  .contact-footer__divider {
+    height: 140px;
+  }
+
+  .contact-footer__cta {
+    width: 150px;
+    height: 150px;
+  }
+
+  .contact-footer__actions {
+    flex-direction: column;
+  }
+}
