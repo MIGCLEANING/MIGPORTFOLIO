@@ -1,3 +1,11 @@
-git add vercel.json
-git commit -m "Add vercel.json for routing"
-git push
+{
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "build",
+  "framework": "create-react-app",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
